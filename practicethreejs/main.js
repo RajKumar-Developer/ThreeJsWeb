@@ -21,6 +21,10 @@ pointLight.position.set(5,5,5)
 
 const ambitLight = new Three.AmbientLight(0xffffff);
 scene.add(pointLight,ambitLight)
+
+const lightHelper = new Three.PointLightHelper(pointLight)
+scene.add(lightHelper)
+
 scene.add(pointLight)
 function animate(){
   requestAnimationFrame(animate);
