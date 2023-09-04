@@ -23,7 +23,9 @@ const ambitLight = new Three.AmbientLight(0xffffff);
 scene.add(pointLight,ambitLight)
 
 const lightHelper = new Three.PointLightHelper(pointLight)
-scene.add(lightHelper)
+const gridHelper = new Three.GridHelper(200,50);
+
+scene.add(lightHelper,gridHelper)
 
 scene.add(pointLight)
 function animate(){
