@@ -8,13 +8,20 @@ const renderer = new Three.WebGLRenderer({
 });
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth,window.innerHeight)
-//camera.position.setZ(30);
+camera.position.setZ(30);
 renderer.render(scene,camera);
 
 const geometry = new Three.TorusGeometry(10,3,16,100)
-const material = new Three.MeshBasicMaterial({color:0xFF6347,wireframe:true})
+// const material = new Three.MeshBasicMaterial({color:0xFF6347,wireframe:true})
+const material = new Three.MeshStandardMaterial({color:0xFF6347})
 const torus = new Three.Mesh(geometry,material);
 scene.add(torus)
+const pointLight = new Three.PointLight(0xFFFFFF)
+pointLight.position.set(5,5,5)
+
+const ambitLight = new Three.AmbientLight(0xffffff);
+scene.add(pointLight,ambitLight)
+scene.add(pointLight)
 function animate(){
   requestAnimationFrame(animate);
 
